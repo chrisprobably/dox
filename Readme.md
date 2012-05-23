@@ -97,9 +97,11 @@ Usage: dox [options]
 
 Options:
 
-  -h, --help     output usage information
-  -v, --version  output the version number
-  -d, --debug    output parsed comments for debugging
+  -h, --help                   output usage information
+  -v, --version                output the version number
+  -d, --debug                  output parsed comments for debugging
+  -i, --input <inputglob>      input files glob e.g. lib/*.js'
+  -o, --output <outputfile>    the output file name, this will read input from the command-line rather than stdio'
 
 Examples:
 
@@ -108,6 +110,16 @@ Examples:
 
   # operates over stdio
   $ dox < myfile.js > myfile.json
+  
+  # process all files in the current directory
+  $ dox -i *.js -o myfile.json
+  
+  # process all files in the lib directory
+  $ dox -i lib/*.js -o myfile.json
+  
+  # process all files in the current directory and any subdirectories
+  $ dox -i **/*.js -o myfile.json
+  
 
 ```
 
